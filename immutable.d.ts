@@ -1,7 +1,5 @@
 /// <reference path="./index.d.ts"/>
 
-declare module 'connected-react-router/immutable' {
-
-  export * from 'connected-react-router';
-
+declare module "ts-connected-react-router/immutable" {
+  export * from "ts-connected-react-router";
 }
