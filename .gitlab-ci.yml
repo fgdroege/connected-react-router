@@ -1,0 +1,23 @@
+default:
+  image: alpine:latest
+  before_script:
+    - apk add npm git curl
+    - npm install
+  tags:
+    - docker
+
+build_artifact:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    expose_as: "Bundle"
+    paths:
+      - dist
+
+upload_artifact:
+  stage: deploy
+  script:
+    - npm publish
+  only:
+    - main
